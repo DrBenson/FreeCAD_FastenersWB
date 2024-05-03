@@ -25,6 +25,9 @@
 import os
 import FreeCADGui
 
+from FSutils import LanguagePath
+FreeCADGui.addLanguagePath(LanguagePath)
+FreeCADGui.updateLocale()
 
 class FastenersWorkbench(FreeCADGui.Workbench):
 
