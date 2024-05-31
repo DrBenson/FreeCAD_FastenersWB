@@ -41,9 +41,10 @@ from FSutils import iconPath
 from FSutils import fsdatapath
 
 matchOuterButton = None
-matchOuterButtonText = translate("FastenerBase", 'Match for pass hole')
+matchOuterButtonText = translate("FastenerBase", "Match for pass hole")
 matchInnerButton = None
-matchInnerButtonText = translate("FastenerBase", 'Match for tap hole')
+matchInnerButtonText = translate("FastenerBase", "Match for tap hole")
+commandsToolbarText = translate("FastenerBase", "FS Commands")
 
 
 FsUseGetSetState =  ((FreeCAD.Version()[0]+'.'+FreeCAD.Version()[1]) < '0.22')\
@@ -567,19 +568,19 @@ def PositionDone(center, radius, done_list, tol=1e-6):
     return False
 
 
-def FSGetAttachableSelections():
+def FSGetAttachableSelections(screwObj=None):
     asels = []
-    for selObj in Gui.Selection.getSelectionEx():
+    for selObj in Gui.Selection.getSelectionEx("", 0):
+        if screwObj is not None and selObj.Object == screwObj:
+            continue
+
         baseObjectNames = selObj.SubElementNames
         obj = selObj.Object
-        grp = obj.getParentGeoFeatureGroup()
-        if grp is not None and hasattr(grp, "TypeId") and grp.TypeId == "PartDesign::Body":
-            obj = grp
         position_done_list = []  # list with sublists to store the center and radius
         # of processed edges to avoid duplicate fasteners
 
         for baseObjectName in baseObjectNames:
-            shape = obj.Shape.getElement(baseObjectName)
+            shape = obj.getSubObject(baseObjectName)
 
             # add explicitly selected edges
             if hasattr(shape, "Curve"):
@@ -767,7 +768,7 @@ class FSMoveCommand:
             obj = selObj.Object
             if hasattr(obj, 'Proxy') and isinstance(obj.Proxy, FSBaseObject):
                 screwObj = obj
-        aselects = FSGetAttachableSelections()
+        aselects = FSGetAttachableSelections(screwObj)
         if len(aselects) > 0:
             edgeObj = aselects[0]
         return screwObj, edgeObj
@@ -817,10 +818,8 @@ FSParam.SetBool("MatchOuterDiameter", False)
 
 class FSMatchTypeInnerCommand:
     def Activated(self):
-        matchOuterButton = FSGetToolbarItem(
-            "FS Commands", matchOuterButtonText)
-        matchInnerButton = FSGetToolbarItem(
-            "FS Commands", matchInnerButtonText)
+        matchOuterButton = FSGetToolbarItem(commandsToolbarText, matchOuterButtonText)
+        matchInnerButton = FSGetToolbarItem(commandsToolbarText, matchInnerButtonText)
         matchInnerButton.setChecked(True)
         matchOuterButton.setChecked(False)
         FSParam.SetBool("MatchOuterDiameter", False)
@@ -836,10 +835,8 @@ class FSMatchTypeInnerCommand:
 
 class FSMatchTypeOuterCommand:
     def Activated(self):
-        matchOuterButton = FSGetToolbarItem(
-            "FS Commands", matchOuterButtonText)
-        matchInnerButton = FSGetToolbarItem(
-            "FS Commands", matchInnerButtonText)
+        matchOuterButton = FSGetToolbarItem(commandsToolbarText, matchOuterButtonText)
+        matchInnerButton = FSGetToolbarItem(commandsToolbarText, matchInnerButtonText)
         matchInnerButton.setChecked(False)
         matchOuterButton.setChecked(True)
         FSParam.SetBool("MatchOuterDiameter", True)
@@ -861,8 +858,8 @@ FSCommands.append("Fasteners_MatchTypeOuter", "command")
 
 def InitCheckables():
     match_outer = FSParam.GetBool("MatchOuterDiameter")
-    matchOuterButton = FSGetToolbarItem("FS Commands", matchOuterButtonText)
-    matchInnerButton = FSGetToolbarItem("FS Commands", matchInnerButtonText)
+    matchOuterButton = FSGetToolbarItem(commandsToolbarText, matchOuterButtonText)
+    matchInnerButton = FSGetToolbarItem(commandsToolbarText, matchInnerButtonText)
     matchOuterButton.setCheckable(True)
     matchInnerButton.setCheckable(True)
     matchOuterButton.setChecked(match_outer)
