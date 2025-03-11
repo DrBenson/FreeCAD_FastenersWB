@@ -105,7 +105,7 @@ class FSBaseObject:
         self.addBasicProperties(obj, None)
         if not hasattr(obj, "offset"):
             return  # quick return, already converted
-        FreeCAD.Console.PrintLog("migrating fasteners to new names\n")
+        FreeCAD.Console.PrintLog(translate("FastenerBase", "migrating fasteners to new names\n"))
         for propName in obj.PropertiesList:
             lc = propName[0].lower()
             if lc != propName[0]:
