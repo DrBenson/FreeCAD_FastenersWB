@@ -26,6 +26,7 @@
 """
 from screw_maker import *
 import FastenerBase
+import FreeCAD
 
 # PCB spacers / Wurth standard WA-SSTII
 
@@ -61,7 +62,7 @@ def makePCBSpacer(self, fa):
     flen = fa.calc_len
 
     FreeCAD.Console.PrintLog(
-        "Making PCB spacer" + diam + "x" + str(flen) + "x" + str(width) + "\n"
+        FreeCAD.Qt.translate("Fastener", "Making PCB spacer") + diam + "x" + str(flen) + "x" + str(width) + "\n"
     )
 
     th, _ = fa.dimTable
