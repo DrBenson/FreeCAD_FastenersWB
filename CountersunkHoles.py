@@ -571,11 +571,11 @@ class FSTaskFilletDialog:
         self.RefreshSelection()
 
     def RefreshSelection(self):
-        FreeCAD.Console.PrintLog("Refresh: " "\n")
+        FreeCAD.Console.PrintLog(translate("DlgCountersunktHoles", "Refresh: ") + "\n")
         self.selobserver.disableObserver = True
         Gui.Selection.clearSelection()
         edges = self.form.ui.GetData()
-        FreeCAD.Console.PrintLog("Reselect: " + str(edges) + "\n")
+        FreeCAD.Console.PrintLog(translate("DlgCountersunktHoles", "Reselect: ") + str(edges) + "\n")
         for edge in edges:
             # Note: edge has this format: "Edge15:M5:0:0:Default".
             Gui.Selection.addSelection(self.baseObj, edge.split(":")[0])
@@ -644,7 +644,7 @@ class FSViewProviderCountersunk:
 
     def unsetEdit(self, vobj, mode=0):
         # self.__vobject__.finishEditing()
-        FreeCAD.Console.PrintLog("Finish edit\n")
+        FreeCAD.Console.PrintLog(translate("DlgCountersunktHoles", "Finish edit\n"))
         # self.finishEditing();
         Gui.Control.closeDialog()
         return False
@@ -741,7 +741,7 @@ class FSCountersunkObject:
         shape = origshape
         for diam in fp.diameters:
             FreeCAD.Console.PrintLog(
-                "Generating hole tool for: " + diam + "\n")
+                translate("DlgCountersunktHoles", "Generating hole tool for: ") + diam + "\n")
             edge, m, f, o, type = cshSplitEdgeDiam(diam)
             cshole = cshMakeCSHole(m, type)
             FastenerBase.FSMoveToObject(
