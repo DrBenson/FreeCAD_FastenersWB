@@ -620,92 +620,92 @@
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="129"/>
         <source>Hexagon bolt with flange, small series</source>
-        <translation type="unfinished"></translation>
+        <translation>帶法蘭的六角螺栓, 小系列</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="130"/>
         <source>Hexagon bolt with flange, heavy series</source>
-        <translation type="unfinished"></translation>
+        <translation>帶法蘭六角螺栓, 重型系列</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="131"/>
         <source>Hex head bolt - Product grades A and B</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭螺栓 - 產品等級 A 和 B</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="132"/>
         <source>Hexagon head bolts with reduced shank</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭短柄螺栓</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="133"/>
         <source>Hex head bolts - Product grade C</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭螺栓 - 產品等級 C</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="134"/>
         <source>Hex head screw - Product grades A and B</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭螺絲 - 產品等級 A 和 B</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="135"/>
         <source>Hex head screws - Product grade C</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭螺絲 - 產品等級 C</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="136"/>
         <source>Hexagon bolts with flange - Small series - Product grade A with driving feature of product grade B</source>
-        <translation type="unfinished"></translation>
+        <translation>帶法蘭的六角螺栓 - 小系列 - A 級產品, 具有 B 級產品的驅動功能</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="137"/>
         <source>Hex head screws with fine pitch thread</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭細牙螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="138"/>
         <source>Hex head bolt with fine pitch thread</source>
-        <translation type="unfinished"></translation>
+        <translation>六角頭細牙螺栓</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="139"/>
         <source>Hexagon bolts with flange - Small series - Product grade A</source>
-        <translation type="unfinished"></translation>
+        <translation>帶法蘭的六角螺栓 - 小系列 - 產品等級 A</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="140"/>
         <source>Hexagon bolts with flange with fine pitch thread - Small series - Product grade A</source>
-        <translation type="unfinished"></translation>
+        <translation>細牙法蘭六角螺栓 - 小系列 - 產品等級 A</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="144"/>
         <source>UNC Hex socket head cap screws</source>
-        <translation type="unfinished"></translation>
+        <translation>UNC 內六角螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="145"/>
         <source>UNC Hex socket head cap screws with low head</source>
-        <translation type="unfinished"></translation>
+        <translation>UNC 內六角低頭螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="146"/>
         <source>UNC Hex socket countersunk head screws</source>
-        <translation type="unfinished"></translation>
+        <translation>UNC 內六角沉頭螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="147"/>
         <source>UNC Hex socket button head screws</source>
-        <translation type="unfinished"></translation>
+        <translation>UNC 內六角圓頭螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="148"/>
         <source>UNC Hex socket button head screws with flange</source>
-        <translation type="unfinished"></translation>
+        <translation>UNC 帶法蘭內六角圓頭螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="149"/>
         <source>UNC Hexagon socket head shoulder screws</source>
-        <translation type="unfinished"></translation>
+        <translation>UNC 內六角帶肩螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="150"/>
@@ -830,12 +830,12 @@
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="180"/>
         <source>(Type 1) Half — round head wood screw</source>
-        <translation type="unfinished"></translation>
+        <translation>(類型1) 半圓頭木螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="181"/>
         <source>(Type 2) Half — round head wood screw</source>
-        <translation type="unfinished"></translation>
+        <translation>(型號2) 半圓頭木螺絲</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="182"/>
@@ -1115,17 +1115,17 @@
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="248"/>
         <source>Wing nuts, type A</source>
-        <translation type="unfinished"></translation>
+        <translation>蝶形螺母, A 型</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="249"/>
         <source>Wing nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>蝶形螺母</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="251"/>
         <source>Square nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>方螺母</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="252"/>
@@ -1150,17 +1150,17 @@
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="256"/>
         <source>Slotted / Castle nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>開槽/槽形螺母</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="257"/>
         <source>Nyloc nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>尼龍螺母</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="258"/>
         <source>Cap nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>蓋形螺帽</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="259"/>
@@ -1190,7 +1190,7 @@
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="264"/>
         <source>(Type 1) Cap nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>(類型 1) 蓋形螺帽</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="267"/>
@@ -1290,12 +1290,12 @@
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="287"/>
         <source>Low cap nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>低蓋螺母</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="288"/>
         <source>High cap nuts</source>
-        <translation type="unfinished"></translation>
+        <translation>高蓋螺母</translation>
     </message>
     <message>
         <location filename="../../../../../../../../media/Extend/sources/FreeCAD/Local_Mod/fasteners-0.5.15/FastenersCmd.py" line="297"/>
