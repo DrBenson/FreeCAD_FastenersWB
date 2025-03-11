@@ -201,7 +201,7 @@ class FSScrewCalcCommand:
     """Display a calculator for needed screw holes"""
 
     def GetResources(self):
-        FreeCAD.Console.PrintLog("Getting resources\n")
+        FreeCAD.Console.PrintLog(translate("DockWidget", "Getting resources\n"))
         icon = os.path.join(iconPath, "IconScrewCalc.svg")
         return {
             "Pixmap": icon,  # the name of a svg file available in the resources
