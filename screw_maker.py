@@ -155,7 +155,7 @@ class Screw:
             done = True
         else:
             FreeCAD.Console.PrintMessage(
-                "No suitable function for " + fastenerAttribs.Type + " Screw Type!\n")
+                FreeCAD.Qt.translate("ScrewMaker", "No suitable function for ") + fastenerAttribs.Type + FreeCAD.Qt.translate("ScrewMaker", " Screw Type!\n"))
             return None
         # Part.show(screw)
         return screw
