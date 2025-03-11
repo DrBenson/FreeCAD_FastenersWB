@@ -566,11 +566,11 @@ class FSScrewMaker(Screw):
         return titles.index(name)
     def GetTableProperty(self, type, diam, property, default_val):
         tablepos = self.GetTablePos(type, property)
-        FreeCAD.Console.PrintLog("Found pos for " + property + ": " + str(tablepos) + "\n")
+        FreeCAD.Console.PrintLog(FreeCAD.Qt.translate("ScrewMaker", "Found pos for ") + property + ": " + str(tablepos) + "\n")
         if (tablepos < 0):
             return default_val
         table = FsData[type + "def"]
-        FreeCAD.Console.PrintLog("Fetching value for diam: " + diam + "\n")
+        FreeCAD.Console.PrintLog(FreeCAD.Qt.translate("ScrewMaker", "Fetching value for diam: ") + diam + "\n")
         return table[diam][tablepos]        
 
     def GetThreadLength(self, type, diam):

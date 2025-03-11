@@ -489,7 +489,7 @@ class FSScrewObject(FSBaseObject):
                 if hasattr(obj, "type"):
                     type = obj.type
                     FreeCAD.Console.PrintLog(
-                        "using original type: " + type + "\n")
+                        translate("FastenerCmd", "using original type: ") + type + "\n")
             obj.addProperty("App::PropertyEnumeration", "Type", "Parameters", translate(
                 "FastenerCmd", "Fastener type")).Type = self.GetCompatibleTypes(type)
             obj.Type = type
@@ -784,7 +784,7 @@ class FSScrewObject(FSBaseObject):
             s = screwMaker.createFastener(self)
             FastenerBase.FSCache[key] = s
         else:
-            FreeCAD.Console.PrintLog("Using cached object\n")
+            FreeCAD.Console.PrintLog(translate("FastenerCmd", "Using cached object\n"))
 
         # Formation of fastener name: DxLxH(LH)-Type
         dispDiam = self.CleanDecimals(self.calc_diam)
