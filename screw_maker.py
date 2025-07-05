@@ -133,7 +133,7 @@ class Screw:
         except ValueError:
             # print "Error! nom_dia and length values must be valid numbers!"
             FreeCAD.Console.PrintMessage(
-                "Error! nom_dia and length values must be valid numbers!\n")
+                FreeCAD.Qt.translate("ScrewMaker", "Error! nom_dia and length values must be valid numbers!\n"))
             return None
 
         if (fastenerAttribs.Diameter == "Custom"):
@@ -155,7 +155,7 @@ class Screw:
             done = True
         else:
             FreeCAD.Console.PrintMessage(
-                "No suitable function for " + fastenerAttribs.Type + " Screw Type!\n")
+                FreeCAD.Qt.translate("ScrewMaker", "No suitable function for ") + fastenerAttribs.Type + FreeCAD.Qt.translate("ScrewMaker", " Screw Type!\n"))
             return None
         # Part.show(screw)
         return screw

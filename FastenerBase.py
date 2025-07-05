@@ -105,7 +105,7 @@ class FSBaseObject:
         self.addBasicProperties(obj, None)
         if not hasattr(obj, "offset"):
             return  # quick return, already converted
-        FreeCAD.Console.PrintLog("migrating fasteners to new names\n")
+        FreeCAD.Console.PrintLog(translate("FastenerBase", "migrating fasteners to new names\n"))
         for propName in obj.PropertiesList:
             lc = propName[0].lower()
             if lc != propName[0]:
@@ -235,7 +235,7 @@ def FSShowError():
     tbnext = tb
     x = 10
     while tbnext is not None and x > 0:
-        FreeCAD.Console.PrintError("At " + tbnext.tb_frame.f_code.co_filename + " Line " + str(tbnext.tb_lineno) + "\n")
+        FreeCAD.Console.PrintError(translate("FastenerBase", "At ") + tbnext.tb_frame.f_code.co_filename + translate("FastenerBase", " Line ") + str(tbnext.tb_lineno) + "\n")
         tbnext = tbnext.tb_next
         x = x - 1
     FreeCAD.Console.PrintError(str(lastErr[1]) + ": " + lastErr[1].__doc__ + "\n")
@@ -268,7 +268,7 @@ def FSGetKey(*args):
         if arg is not None:
             key = key + "|" + str(arg)
     if key in FSCache:
-        FreeCAD.Console.PrintLog("Using cached shape for: " + key + "\n")
+        FreeCAD.Console.PrintLog(translate("FastenerBase", "Using cached shape for: " + key + "\n"))
         return (key, FSCache[key])
     return (key, None)
 
@@ -277,7 +277,7 @@ def FSGetKey(*args):
 def FSCacheRemoveThreaded():
     for key in list(FSCache.keys()):
         if key.find("Thread:True") > 0:
-            FreeCAD.Console.PrintLog("Removing cached shape: " + key + "\n")
+            FreeCAD.Console.PrintLog(translate("FastenerBase", "Removing cached shape: " + key + "\n"))
             del FSCache[key]
 
 
@@ -431,7 +431,7 @@ class FSFaceMaker:
     def AddPointRelative(self, dx, dz):
         """Adds a point relative to the last point, creating a line."""
         if self.firstPoint is None:
-            FreeCAD.Console.PrintError("FSFaceMaker.AddPointRelative: A start point has to be set previous")
+            FreeCAD.Console.PrintError(translate("FastenerBase", "FSFaceMaker.AddPointRelative: A start point has to be set previous"))
             return
         else:
             curPoint = self.lastPoint + FreeCAD.Base.Vector(dx, 0, dz)
@@ -482,7 +482,7 @@ class FSFaceMaker:
         """
         l = len(args)
         if l < 4 or (l & 1) == 1:
-            FreeCAD.Console.PrintError("FSFaceMaker.AddBSpline: invalid num of args, must be even number >= 4")
+            FreeCAD.Console.PrintError(translate("FastenerBase", "FSFaceMaker.AddBSpline: invalid num of args, must be even number >= 4"))
             return
         pt = self.lastPoint
         pts = []
@@ -576,7 +576,7 @@ class FSViewProviderIcon:
         return None
 
     if FsUseGetSetState:  # compatibility with old versions
-        FreeCAD.Console.PrintLog("Using old getstate/setstate system\n")
+        FreeCAD.Console.PrintLog(translate("FastenerBase", "Using old getstate/setstate system\n"))
 
         def __setstate__(self, state):
             self.loads(state)
@@ -629,7 +629,7 @@ def FSGetAttachableSelections(screwObj=None):
                     continue
                 asels.append((obj, [baseObjectName]))
                 position_done_list.append([shape.Curve.Center, shape.Curve.Radius])
-                FreeCAD.Console.PrintLog("Linking to " + obj.Name + "[" + baseObjectName + "].\n")
+                FreeCAD.Console.PrintLog(translate("FastenerBase", "Linking to ") + obj.Name + "[" + baseObjectName + "].\n")
 
             # add edges of selected faces
             elif isinstance(shape, Part.Face):
@@ -654,7 +654,7 @@ def FSGetAttachableSelections(screwObj=None):
                         continue
                     asels.append((obj, [edgeName]))
                     position_done_list.append([edge.Curve.Center, edge.Curve.Radius])
-                    FreeCAD.Console.PrintLog("Linking to " + obj.Name + "[" + edgeName + "].\n")
+                    FreeCAD.Console.PrintLog(translate("FastenerBase", "Linking to ") + obj.Name + "[" + edgeName + "].\n")
 
     if len(asels) == 0:
         asels.append(None)
@@ -677,7 +677,7 @@ def FSMoveToObject(ScrewObj_m, attachToObject, invert, offset, offsetAngle):
             Axis1 = s.Surface.Axis
 
     if hasattr(s, "Point"):
-        FreeCAD.Console.PrintLog("the object seems to be a vertex! " + str(s.Point) + "\n")
+        FreeCAD.Console.PrintLog(translate("FastenerBase", "the object seems to be a vertex! ") + str(s.Point) + "\n")
         Pnt1 = s.Point
 
     if Axis1 is not None:
@@ -835,9 +835,9 @@ class FSMakeSimpleCommand:
     def Activated(self):
         for selObj in Gui.Selection.getSelectionEx():
             obj = selObj.Object
-            FreeCAD.Console.PrintLog("sel shape: " + str(obj.Shape) + "\n")
+            FreeCAD.Console.PrintLog(translate("FastenerBase", "sel shape: ") + str(obj.Shape) + "\n")
             if isinstance(obj.Shape, (Part.Solid, Part.Compound)):
-                FreeCAD.Console.PrintLog("simplify shape: " + obj.Name + "\n")
+                FreeCAD.Console.PrintLog(translate("FastenerBase", "simplify shape: ") + obj.Name + "\n")
                 cobj = FreeCAD.ActiveDocument.addObject("Part::Feature", obj.Label + "_Copy")
                 cobj.Shape = obj.Shape
                 Gui.ActiveDocument.getObject(obj.Name).Visibility = False
@@ -867,7 +867,7 @@ class FSMatchTypeInnerCommand:
         if matchInnerButton is not None:
             matchOuterButton.setChecked(False)
             FSParam.SetBool("MatchOuterDiameter", False)
-            FreeCAD.Console.PrintLog("Set auto diameter to match inner thread\n")
+            FreeCAD.Console.PrintLog(translate("FastenerBase", "Set auto diameter to match inner thread\n"))
 
     def GetResources(self):
         return {
@@ -886,7 +886,7 @@ class FSMatchTypeOuterCommand:
             matchInnerButton.setChecked(True)
         if matchInnerButton is not None:
             FSParam.SetBool("MatchOuterDiameter", True)
-            FreeCAD.Console.PrintLog("Set auto diameter to match outer thread\n")
+            FreeCAD.Console.PrintLog(translate("FastenerBase", "Set auto diameter to match outer thread\n"))
 
     def GetResources(self):
         return {
@@ -941,7 +941,7 @@ class FSMakeBomCommand:
             name = FSRemoveDigits(obj.Name)
             # get total count
             cnt = GetTotalObjectRepeats(obj)
-            FreeCAD.Console.PrintLog("Using method: Add" + obj.Name + "\n")
+            FreeCAD.Console.PrintLog(translate("FastenerBase", "Using method: Add") + obj.Name + "\n")
             method = getattr(self, "Add" + name, lambda x, y: "nothing")
             method(obj, cnt)
             # FreeCAD.Console.PrintLog('Add ' + str(cnt) + " " + obj.Name  + "\n")
